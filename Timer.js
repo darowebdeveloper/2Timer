@@ -17,10 +17,13 @@ class Timer {
   // Use arrow function to avoid 'this' issue
   start = () => {
     if(this.onStart) {
-      this.onStart();
+      this.onStart(this.timeRemaining);
+    }
+    if(this.intervalId) {
+      this.pause();
     }
     this.tick();
-    this.intervalId = setInterval(this.tick, 1000);
+    this.intervalId = setInterval(this.tick, 50);
   }
   pause = () => {
     clearInterval(this.intervalId);
@@ -32,9 +35,9 @@ class Timer {
         this.onComplete();
       }
     } else {
-      this.timeRemaining = this.timeRemaining - 1;
+      this.timeRemaining = this.timeRemaining - .05;
       if(this.onTick) {
-        this.onTick();
+        this.onTick(this.timeRemaining);
       }
     }
   }
@@ -43,6 +46,6 @@ class Timer {
     return parseFloat(this.inputDuration.value);
   }
   set timeRemaining(value) {
-    this.inputDuration.value = value;
+    this.inputDuration.value = value.toFixed(2);
   }
 }

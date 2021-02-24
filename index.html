@@ -7,6 +7,20 @@
   <title>Timer</title>
 </head>
 <body>
+  <svg height="400" width="400">
+    <circle 
+      r="190" 
+      cx="200" 
+      cy="200"
+      fill="transparent"
+      stroke="blue"
+      stroke-width="15"
+      transform="rotate(-90 200 200)"
+    >
+    <!-- circle's perimeter or length = 2 * Math.PI * radio -->
+    <!-- stroke-dasharray create dash length and gap -->
+    <!-- stroke-dashoffset add to gap; use negative value for clockwise -->
+  </svg>
   <input id="duration" type="text" value="30">
   <button id="start">Start</button>
   <button id="pause">Pause</button>
