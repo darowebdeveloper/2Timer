@@ -4,26 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Timer</title>
 </head>
 <body>
-  <svg height="400" width="400">
-    <circle 
-      r="190" 
-      cx="200" 
-      cy="200"
-      fill="transparent"
-      stroke="blue"
-      stroke-width="15"
-      transform="rotate(-90 200 200)"
-    >
-    <!-- circle's perimeter or length = 2 * Math.PI * radio -->
-    <!-- stroke-dasharray create dash length and gap -->
-    <!-- stroke-dashoffset add to gap; use negative value for clockwise -->
-  </svg>
-  <input id="duration" type="text" value="30">
-  <button id="start">Start</button>
-  <button id="pause">Pause</button>
+  <div class="container">
+    <svg class="circle" height="400" width="400">
+      <circle 
+        r="190" 
+        cx="200" 
+        cy="200"
+        fill="transparent"
+        stroke="blue"
+        stroke-width="15"
+        transform="rotate(-90 200 200)"
+      >
+      <!-- circle's perimeter or length = 2 * Math.PI * radio -->
+      <!-- stroke-dasharray create dash length and gap -->
+      <!-- stroke-dashoffset add to gap; use negative value for clockwise -->
+    </svg>
+    
+    <div class="timer">
+      <input id="duration" type="text" value="30">
+      <button id="start"><i class="fa fa-play" aria-hidden="true"></i></button>
+      <button id="pause"><i class="fa fa-pause" aria-hidden="true"></i></button>
+    </div>
+  </div>
+
   <script src="Timer.js"></script>
   <script src="index.js"></script>
 </body>

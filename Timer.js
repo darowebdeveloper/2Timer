@@ -46,6 +46,10 @@ class Timer {
     return parseFloat(this.inputDuration.value);
   }
   set timeRemaining(value) {
-    this.inputDuration.value = value.toFixed(2);
+    if(isNaN(this.inputDuration.value)) {
+      this.inputDuration.value = 0;
+    } else {
+      this.inputDuration.value = value.toFixed(2);
+    }
   }
 }

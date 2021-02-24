@@ -16,6 +16,7 @@ let timer = new Timer(inputDuraiton, startBtn, pauseBtn, {
     circle.setAttribute('stroke-dashoffset', (perimeter * timeRemaining)/ duration - perimeter);
   },
   onComplete() {
-    console.log('Timer complete...');
+    var audio = new Audio('https://freesound.org/data/previews/415/415510_5121236-lq.mp3');
+    audio.play();
   },
 });
